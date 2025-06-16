@@ -6,7 +6,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [['json'], ['html']],
+  reporter: [['json'], ['html', { open: 'never', host: '0.0.0.0' }]],
   use: {
     baseURL: 'https://beksar-yernar.web.app/',
     trace: 'on-first-retry',
