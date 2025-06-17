@@ -10,7 +10,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://beksar-yernar.web.app/',
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
   },
   projects: [
     {
@@ -26,4 +26,5 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
   ],
+  outputDir: 'test-results/',
 });
