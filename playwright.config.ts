@@ -8,22 +8,57 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [['json'], ['html', { open: 'never', host: '0.0.0.0' }]],
   use: {
-    baseURL: 'https://beksar-yernar.web.app/',
     trace: 'on-first-retry',
     screenshot: 'on',
   },
   projects: [
+    // Production Environment - Chrome
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'production-chrome',
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://beksar-yernar.web.app/',
+      },
     },
+    // Production Environment - Firefox
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'production-firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
+        baseURL: 'https://beksar-yernar.web.app/',
+      },
     },
+    // Production Environment - Safari
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'production-safari',
+      use: { 
+        ...devices['Desktop Safari'],
+        baseURL: 'https://beksar-yernar.web.app/',
+      },
+    },
+    // Local Development Environment - Chrome
+    {
+      name: 'local-chrome',
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://beksar-yernar.web.app/',
+      },
+    },
+    // Local Development Environment - Firefox
+    {
+      name: 'local-firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
+        baseURL: 'https://beksar-yernar.web.app/',
+      },
+    },
+    // Mobile Testing - Production
+    {
+      name: 'production-mobile',
+      use: { 
+        ...devices['iPhone 13'],
+        baseURL: 'https://beksar-yernar.web.app/',
+      },
     },
   ],
   outputDir: 'test-results/',
