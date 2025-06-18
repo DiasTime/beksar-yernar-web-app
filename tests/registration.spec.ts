@@ -30,6 +30,7 @@ function generateUniqueEmail(browserName: string): string {
   };
   return emails[browserName as keyof typeof emails] || `dias.u.tester${counter}@gmail.com`;
 }
+//это все что сверху  просто генерирует почту чтобы вручную ее не писать 
 
 test('text vidimost', async ({ page }) => {
   await page.goto('https://beksar-yernar.web.app/');
@@ -77,7 +78,6 @@ test('is clickable', async ({ page }) => {
 });
 
 test('registration', async ({ page, browserName }) => {
-  // Генерируем уникальный email для текущего браузера
   const uniqueEmail = generateUniqueEmail(browserName);
   console.log(`Using email for ${browserName}: ${uniqueEmail}`);
   
@@ -117,14 +117,8 @@ test('registration', async ({ page, browserName }) => {
     await page.screenshot({ fullPage: true });
     await page.getByRole('button', { name: 'ЗАРЕГИСТРИРОВАТЬСЯ' }).click();
   
-  // Проверка на успешную регистрацию по всему DOM
   await expect(page.locator('body')).toContainText('Регистрация успешно завершена', { timeout: 10000 });
-    await page.screenshot({ fullPage: true });
-    try {
-    await expect(page.locator('.Toastify')).toBeVisible({ timeout: 5000 });
-    await expect(page.locator('.Toastify')).toContainText('Регистрация успешно завершена');
-  } catch (error) {
-    console.log('Toastify container not visible, but success message found');
-  }
+  await expect(page.locator('#root')).toContainText('Главная', { timeout: 10000 });
+  // проверка на успешную регистрацию
     await page.screenshot({ fullPage: true });
 });
