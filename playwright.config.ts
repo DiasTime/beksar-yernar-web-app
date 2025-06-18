@@ -12,49 +12,29 @@ export default defineConfig({
     screenshot: 'on',
   },
   projects: [
-    // Production Environment - Chrome
     {
-      name: 'production-chrome',
+      name: 'chrome',
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: 'https://beksar-yernar.web.app/',
       },
     },
-    // Production Environment - Firefox
     {
-      name: 'production-firefox',
+      name: 'firefox',
       use: { 
         ...devices['Desktop Firefox'],
         baseURL: 'https://beksar-yernar.web.app/',
       },
     },
-    // Production Environment - Safari
     {
-      name: 'production-safari',
+      name: 'safari',
       use: { 
         ...devices['Desktop Safari'],
         baseURL: 'https://beksar-yernar.web.app/',
       },
     },
-    // Local Development Environment - Chrome
-    {
-      name: 'local-chrome',
-      use: { 
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://beksar-yernar.web.app/',
-      },
-    },
-    // Local Development Environment - Firefox
-    {
-      name: 'local-firefox',
-      use: { 
-        ...devices['Desktop Firefox'],
-        baseURL: 'https://beksar-yernar.web.app/',
-      },
-    },
-    // Mobile Testing - Production
-    {
-      name: 'production-mobile',
+     {
+      name: 'mobile',
       use: { 
         ...devices['iPhone 13'],
         baseURL: 'https://beksar-yernar.web.app/',

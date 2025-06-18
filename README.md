@@ -21,8 +21,3 @@ npm run test:ui
 npm run test:debug
 ```
 
-## Test Structure
-
-- `tests/website.spec.ts`: Main test file containing all test cases
-- `playwright.config.ts`: Playwright configuration
-- `package.json`: Project dependencies and scripts
