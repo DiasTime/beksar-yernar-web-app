@@ -97,15 +97,9 @@ test('registration', async ({ page, browserName }) => {
   await page.locator('input[type="email"]').nth(1).click();
   await page.locator('input[type="email"]').nth(1).fill(uniqueEmail);
   await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('text-input-outlined').click();
-  await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('text-input-outlined').fill('Qweasd');
-  await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('text-input-outlined').click();
-  await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('text-input-outlined').fill('Qweasdzxc');
-  await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('text-input-outlined').click();
   await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('text-input-outlined').fill('Qweasdzxcqw13d#');
   await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈉$/ }).getByTestId('right-icon-adornment').click();
   await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈈$/ }).getByTestId('text-input-outlined').click();
-  await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈈$/ }).getByTestId('text-input-outlined').press('ControlOrMeta+a');
-  await page.locator('div').filter({ hasText: /^ПарольПароль󰌾󰈈$/ }).getByTestId('text-input-outlined').press('ControlOrMeta+c');
   await page.locator('div').filter({ hasText: /^Повторите парольПовторите пароль󰌾󰈉$/ }).getByTestId('text-input-outlined').click();
   await page.locator('div').filter({ hasText: /^Повторите парольПовторите пароль󰌾󰈉$/ }).getByTestId('text-input-outlined').fill('Qweasdzxcqw13d#');
   await page.locator('div').filter({ hasText: /^Название организацииНазвание организации󰦑$/ }).getByTestId('text-input-outlined').click();
