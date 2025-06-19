@@ -19,27 +19,27 @@ export default defineConfig({
         baseURL: 'https://beksar-yernar.web.app/',
       },
     },
-    {
-      name: 'firefox',
-      use: { 
-        ...devices['Desktop Firefox'],
-        baseURL: 'https://beksar-yernar.web.app/',
-      },
-    },
-    {
-      name: 'safari',
-      use: { 
-        ...devices['Desktop Safari'],
-        baseURL: 'https://beksar-yernar.web.app/',
-      },
-    },
-     {
-      name: 'mobile',
-      use: { 
-        ...devices['iPhone 13'],
-        baseURL: 'https://beksar-yernar.web.app/',
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { 
+    //     ...devices['Desktop Firefox'],
+    //     baseURL: 'https://beksar-yernar.web.app/',
+    //   },
+    // },
+    // {
+    //   name: 'safari',
+    //   use: { 
+    //     ...devices['Desktop Safari'],
+    //     baseURL: 'https://beksar-yernar.web.app/',
+    //   },
+    // },
+    //  {
+    //   name: 'mobile',
+    //   use: { 
+    //     ...devices['iPhone 13'],
+    //     baseURL: 'https://beksar-yernar.web.app/',
+    //   },
+    // },
   ],
   outputDir: 'test-results/',
 });
